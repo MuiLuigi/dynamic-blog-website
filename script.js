@@ -37,12 +37,27 @@ form.addEventListener('submit', function(event) {
     event.preventDefault(); 
 });
 
+//Saving the blogs data
 document.getElementById('formRegistration').addEventListener('submit', function(s) {
     s.preventDefault();
     const blogTitle = document.getElementById('name').value;
     const blogContent = document.getElementById('content').value;
     const blog = JSON.parse(localStorage.getItem('blog'));
-    blog.push({ id: Date.now(), blogTitle, blogContent });
-    localStorage.setItem('blog', JSON.stringify(blog));
-    window.location.href = 'index.html';
+    const images = document.getElementById('image');
+
+    if (images.files.length > 0) {
+        const fileReader = new FileReader();
+        fileReader.onload = function() {
+            const data = fileReader.result;
+            blog.push({ id: Date.now(), blogTitle, blogContent, image: data });
+            localStorage.setItem('blog', JSON.stringify(blog));
+            window.location.href = 'index.html';
+        }
+        fileReader.readAsDataURL(images.files[0]);
+    }
+    else {
+        blog.push({ id: Date.now(), blogTitle, blogContent, image: null });
+        localStorage.setItem('blog', JSON.stringify(blog));
+        window.location.href = 'index.html';
+    }
 });
