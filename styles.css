@@ -31,6 +31,55 @@ body {
     padding: 20px;
 }
 
+input[type="submit"]{
+    background-color: rgb(29, 114, 18);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover{
+    background-color: rgb(121, 177, 49);
+    transform: scale(1.04);
+}
+
+input[type="reset"]{
+    background-color: rgb(29, 117, 21);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="reset"]:hover{
+    background-color: rgb(121, 177, 49);
+    transform: scale(1.04);
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.flex-item{
+    padding: 20px;
+    width: 50px 100%;
+    text-align: center;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
 /* Media Queries for Mobile Devices */
 @media only screen and (max-width: 600px) {
     header, footer, body {
