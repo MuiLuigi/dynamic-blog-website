@@ -1,0 +1,50 @@
+.button {
+    display: inline-block;
+    padding: 20px;
+    color: rgb(9, 68, 55);
+    margin: 10px;
+    background: rgb(71, 236, 159);
+}
+
+.button:hover {
+    background-color: rgb(15, 172, 93);
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(245, 25, 25);
+    text-align: center;
+}
+
+.home{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(33, 224, 81);
+    margin: auto;
+    justify-content: center;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Media Queries for Mobile Devices */
+@media only screen and (max-width: 600px) {
+    header, footer, body {
+        padding: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 10px;
+        margin: 10px;
+    }
+}
