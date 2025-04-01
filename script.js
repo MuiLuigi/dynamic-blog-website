@@ -37,7 +37,7 @@ form.addEventListener('submit', function(event) {
     event.preventDefault(); 
 });
 
-//Saving the blogs data
+//Saving the blogs data in the local storage
 document.getElementById('formRegistration').addEventListener('submit', function(s) {
     s.preventDefault();
     const blogTitle = document.getElementById('name').value;
