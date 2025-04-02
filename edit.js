@@ -4,6 +4,7 @@ window.onload = function() {
     const nameInput = document.getElementById('name');
     const usernameInput = document.getElementById('username');
     const selection = document.getElementById('saved-blogs');
+    const deleteButton = document.getElementById('delete');
 
     const successMessage = document.getElementById('successMessage');
 
@@ -44,5 +45,19 @@ window.onload = function() {
     
         localStorage.setItem('blog', JSON.stringify(blog));
         successMessage.textContent = 'The blog has been updated successfully!'
+    });
+    
+    deleteButton.addEventListener('click', function() {
+        if (selected == null) {
+            alert('You have not selected which blog you would like to delete');
+            return;
+        }
+
+        blog = blog.filter(d => d.id !== selected.id);
+        localStorage.setItem('blog', JSON.stringify(blog));
+        nameInput.value = '';
+        usernameInput.value = '';
+        selected = null;
+        alert('The blog has been deleted successfully! Please reload the page');
     });
 }
