@@ -80,6 +80,32 @@ input[type="reset"]:hover{
     margin: 20px;
 }
 
+button[type="submit"] {
+    display: inline-block;
+    padding: 20px;
+    color: rgb(9, 68, 55);
+    margin: 10px;
+    background: rgb(33, 145, 92);
+}
+
+button[type="submit"]:hover{
+    background-color: rgb(47, 153, 83);
+    transform: scale(1.04);
+}
+
+button[type="button"] {
+    display: inline-block;
+    padding: 20px;
+    color: rgb(75, 175, 154);
+    margin: 10px;
+    background: rgb(73, 49, 128);
+}
+
+button[type="button"]:hover{
+    background-color: rgb(75, 87, 155);
+    transform: scale(1.04);
+}
+
 /* Media Queries for Mobile Devices */
 @media only screen and (max-width: 600px) {
     header, footer, body {
