@@ -61,3 +61,31 @@ document.getElementById('formRegistration').addEventListener('submit', function(
         window.location.href = 'index.html';
     }
 });
+
+//For the saved blogs to allow the user to edit the blogs
+let savedBlog = null;
+const selection = document.getElementById('saved-blogs');
+const blog = JSON.parse(localStorage.getItem('blog'));
+const title = document.getElementById('name');
+const content = document.getElementById('content');
+
+blog.forEach(blogs => {
+    const select = document.createElement('option');
+    option.value = blogs.id;
+    option.textContent = blogs.title;
+    selection.appendChild(option);
+});
+
+selection.addEventListener('edit', () => {
+    const id = parseInt(selection.value);
+    selected = blog.find(blogSelect => blogSelect.id === id);
+
+    if (selected) {
+        title.value = selected.title;
+        content.value = selected.content;
+    }
+    else {
+        title.value = null;
+        content.value = null;
+    }
+});
