@@ -11,6 +11,24 @@
     <select name="" id="saved-blogs">
         <option value="">Please select the blog you would like to edit</option>
     </select>
-    <a href="index.html" class="button">Homepage</a>
+
+    <form id="editor">
+        <label for="name">Please enter the new title of the blog post: </label>
+        <input type="text" id="name" name="name">
+        <span class="error" id="nameError"></span>
+        <br>
+        <br>
+        
+
+        <label for="username">Please make the changes on the content of your blog post: </label>
+        <textarea id="username" placeholder="Content"></textarea>
+        <span class="error" id="usernameError"></span>
+        <br>
+        <br>
+
+        <button type="submit">Save Changes</button>
+
+        <a href="index.html" class="button">Homepage</a>
+    </form>
 </body>
 </html>
