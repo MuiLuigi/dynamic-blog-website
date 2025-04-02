@@ -45,4 +45,13 @@ window.onload = function() {
         localStorage.setItem('blog', JSON.stringify(blog));
         successMessage.textContent = 'The blog has been updated successfully!'
     });
+    
+    deleteButton.addEventListener('click', function() {
+        if (selected == null) {
+            alert('You have not selected which blog you would like to delete');
+            return;
+        }
+
+        
+    });
 }
