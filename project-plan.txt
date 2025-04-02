@@ -1,0 +1,4 @@
+For this Assignment, I plan on using code from my previous assignments and portfolio assignment for reference in creating the form that allows the user to create a blog. 
+I will use JavaScript to add validation to the form. I will use code from previous assignments for reference for this as well. 
+I will also use JavaScript to save the blogs that are newly created into local storage. I plan on using the code from assignment 2 for reference for this.
+I will use CSS to add basic styling to the webpages.
