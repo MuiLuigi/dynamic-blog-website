@@ -4,6 +4,7 @@ window.onload = function() {
     const nameInput = document.getElementById('name');
     const usernameInput = document.getElementById('username');
     const selection = document.getElementById('saved-blogs');
+    const deleteButton = document.getElementById('delete');
 
     const successMessage = document.getElementById('successMessage');
 
@@ -52,6 +53,6 @@ window.onload = function() {
             return;
         }
 
-        
+        blog = blog.filter();
     });
 }
