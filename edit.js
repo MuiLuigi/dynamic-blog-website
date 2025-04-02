@@ -1,15 +1,11 @@
 window.onload = function() {
-    const form = document.getElementById('editor');
+    const form2 = document.getElementById('editor');
 
     const nameInput = document.getElementById('name');
     const usernameInput = document.getElementById('username');
     const selection = document.getElementById('saved-blogs');
 
-    const nameError = document.getElementById('nameError');
-    const usernameError = document.getElementById('usernameError');
-
     const successMessage = document.getElementById('successMessage');
-    const clearMessage = document.getElementById('clear-btn');
 
     let blog = JSON.parse(localStorage.getItem('blog') || '[]');
     let selected = null;
@@ -35,7 +31,7 @@ window.onload = function() {
         }
     });
     
-    document.getElementById('editor').addEventListener('submit', function(e) {
+    form2.addEventListener('submit', function(e) {
         e.preventDefault();
         
         if (selected) {
