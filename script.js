@@ -50,6 +50,7 @@ form.addEventListener('submit', function(event) {
             blog.push({ id: Date.now(), blogTitle, blogContent, image: data });
             localStorage.setItem('blog', JSON.stringify(blog));
             successMessage.textContent = 'The blog has been successfully posted!';
+            window.location.href = 'post.html';
         }
         fileReader.readAsDataURL(images.files[0]);
     }
@@ -57,44 +58,4 @@ form.addEventListener('submit', function(event) {
         blog.push({ id: Date.now(), blogTitle, blogContent, image: null });
         localStorage.setItem('blog', JSON.stringify(blog));
     }
-});
-
-//For the saved blogs to allow the user to edit the blogs
-let savedBlog = null;
-const selection = document.getElementById('saved-blogs');
-
-blog.forEach(blogs => {
-    const select = document.createElement('option');
-    select.value = blogs.id;
-    select.textContent = blogs.blogTitle;
-    selection.appendChild(select);
-});
-
-selection.addEventListener('change', () => {
-    const id = parseInt(selection.value);
-    selected = blog.find(blogSelect => blogSelect.id === id);
-
-    if (selected) {
-        nameInput.value = selected.blogTitle;
-        usernameInput.value = selected.blogContent;
-    }
-    else {
-        nameInput.value = '';
-        usernameInput.value = '';
-    }
-});
-
-document.getElementById('editor').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    if (selected) {
-        selected.blogTitle = nameInput.value;
-        selected.blogContent = usernameInput.value;
-    }
-    else {
-        blog.push({ id: Date.now(), blogTitle: nameInput.value, blogContent: usernameInput.value, image: null });
-    }
-
-    localStorage.setItem('blog', JSON.stringify(blog));
-    successMessage.textContent = 'The blog has been updated successfully!'
 });
