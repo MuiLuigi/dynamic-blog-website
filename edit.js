@@ -53,6 +53,11 @@ window.onload = function() {
             return;
         }
 
-        blog = blog.filter();
+        blog = blog.filter(d => d.id !== selected.id);
+        localStorage.setItem('blog', JSON.stringify(blog));
+        nameInput.value = '';
+        usernameInput.value = '';
+        selected = null;
+        alert('The blog has been deleted successfully! Please reload the page');
     });
 }
