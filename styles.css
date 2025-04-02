@@ -1,0 +1,125 @@
+.button {
+    display: inline-block;
+    padding: 20px;
+    color: rgb(9, 68, 55);
+    margin: 10px;
+    background: rgb(71, 236, 159);
+}
+
+.button:hover {
+    background-color: rgb(15, 172, 93);
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(245, 25, 25);
+    text-align: center;
+}
+
+.home{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(33, 224, 81);
+    margin: auto;
+    justify-content: center;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+input[type="submit"]{
+    background-color: rgb(29, 114, 18);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover{
+    background-color: rgb(121, 177, 49);
+    transform: scale(1.04);
+}
+
+input[type="reset"]{
+    background-color: rgb(29, 117, 21);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="reset"]:hover{
+    background-color: rgb(121, 177, 49);
+    transform: scale(1.04);
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.flex-item{
+    padding: 20px;
+    width: 50px 100%;
+    text-align: center;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+button[type="submit"] {
+    display: inline-block;
+    padding: 20px;
+    color: rgb(9, 68, 55);
+    margin: 10px;
+    background: rgb(33, 145, 92);
+}
+
+button[type="submit"]:hover{
+    background-color: rgb(47, 153, 83);
+    transform: scale(1.04);
+}
+
+button[type="button"] {
+    display: inline-block;
+    padding: 20px;
+    color: rgb(75, 175, 154);
+    margin: 10px;
+    background: rgb(73, 49, 128);
+}
+
+button[type="button"]:hover{
+    background-color: rgb(75, 87, 155);
+    transform: scale(1.04);
+}
+
+/* Media Queries for Mobile Devices */
+@media only screen and (max-width: 600px) {
+    header, footer, body {
+        padding: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 10px;
+        margin: 10px;
+    }
+}
