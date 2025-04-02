@@ -5,12 +5,17 @@ const nameInput = document.getElementById('name');
 const usernameInput = document.getElementById('username');
 
 const nameError = document.getElementById('nameError');
-const emailError = document.getElementById('emailError');
+const usernameError = document.getElementById('usernameError');
 
 const successMessage = document.getElementById('successMessage');
 const clearMessage = document.getElementById('clear-btn');
 
+let blog = JSON.parse(localStorage.getItem('blog') || '[]');
+let selected = null;
+
 form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
     nameError.textContent = '';
     usernameError.textContent = '';
     successMessage.textContent = ''; 
@@ -32,17 +37,10 @@ form.addEventListener('submit', function(event) {
     //If all inputs are valid, show success message
     if (isValid) {
         successMessage.textContent = 'The post has been added successfully!';
-    }
+    } 
 
-    event.preventDefault(); 
-});
-
-//Saving the blogs data in the local storage
-document.getElementById('formRegistration').addEventListener('submit', function(s) {
-    s.preventDefault();
-    const blogTitle = document.getElementById('name').value;
-    const blogContent = document.getElementById('content').value;
-    const blog = JSON.parse(localStorage.getItem('blog'));
+    const blogTitle = nameInput.value;
+    const blogContent = usernameInput.value;
     const images = document.getElementById('image');
 
     if (images.files.length > 0) {
@@ -51,13 +49,13 @@ document.getElementById('formRegistration').addEventListener('submit', function(
             const data = fileReader.result;
             blog.push({ id: Date.now(), blogTitle, blogContent, image: data });
             localStorage.setItem('blog', JSON.stringify(blog));
-            window.location.href = 'index.html';
+            successMessage.textContent = 'The blog has been successfully posted!';
+            window.location.href = 'post.html';
         }
         fileReader.readAsDataURL(images.files[0]);
     }
     else {
         blog.push({ id: Date.now(), blogTitle, blogContent, image: null });
         localStorage.setItem('blog', JSON.stringify(blog));
-        window.location.href = 'index.html';
     }
 });
